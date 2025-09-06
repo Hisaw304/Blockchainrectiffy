@@ -6,45 +6,45 @@
     <title>404 Not Found</title>
     <style>
       body {
+        background: #ffffff; /* White background */
+        color: #000000; /* Black text */
+        font-family: monospace;
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: column;
         height: 100vh;
-        background: #0d1117;
-        color: #fff;
-        font-family: Arial, sans-serif;
-        text-align: center;
         margin: 0;
+        font-size: 1rem;
+        white-space: pre-line;
+        text-align: left;
       }
-      h1 {
-        font-size: 6rem;
-        margin: 0;
-        color: #ff4c4c;
+      .error-box {
+        padding: 20px 30px;
       }
-      p {
-        font-size: 1.5rem;
-        margin: 10px 0 20px;
-        color: #c9d1d9;
-      }
-      a {
-        display: inline-block;
-        margin-top: 15px;
-        padding: 10px 20px;
-        background: #238636;
-        color: #fff;
-        text-decoration: none;
-        border-radius: 6px;
-        transition: background 0.3s;
-      }
-      a:hover {
-        background: #2ea043;
+      .highlight {
+        color: #d32f2f; /* Red highlight for "404" */
+        font-weight: bold;
       }
     </style>
   </head>
   <body>
-    <h1>404</h1>
-    <p>Oops! The page you are looking for cannot be found.</p>
-    <a href="/">Go Back Home</a>
+    <div class="error-box">
+      <div class="highlight">404: NOT_FOUND</div>
+      Code: NOT_FOUND<br />
+      ID: <span id="error-id"></span>
+    </div>
+
+    <script>
+      // Generate a random-looking ID
+      function generateRandomId() {
+        const prefix = "cpt1::";
+        const rand1 = Math.random().toString(36).substring(2, 8);
+        const rand2 = Date.now();
+        const rand3 = Math.random().toString(36).substring(2, 12);
+        return `${prefix}${rand1}-${rand2}-${rand3}`;
+      }
+
+      document.getElementById("error-id").textContent = generateRandomId();
+    </script>
   </body>
 </html>
