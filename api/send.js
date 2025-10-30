@@ -28,9 +28,11 @@ export default async function handler(req, res) {
       text: message,
     });
 
-    return res.status(200).json({ success: true, msg: "Message sent!" });
+    // Redirect user instead of sending JSON
+    const redirectUrl = req.body._next || "/";
+    return res.redirect(302, redirectUrl);
   } catch (err) {
     console.error("MAIL ERROR:", err);
-    return res.status(500).json({ error: "Failed to send email" });
+    return res.redirect(302, req.body._next || "/?error=1");
   }
 }
