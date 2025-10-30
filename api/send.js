@@ -1,34 +1,36 @@
-import express from "express";
 import nodemailer from "nodemailer";
-import bodyParser from "body-parser";
 
-const app = express();
-app.use(bodyParser.urlencoded({ extended: true }));
+export default async function handler(req, res) {
+  if (req.method !== "POST") {
+    return res.status(405).json({ error: "Only POST allowed" });
+  }
 
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: "maxajima@gmail.com",
-    pass: process.env.EMAIL_PASS,
-  },
-});
+  const { message } = req.body;
 
-app.post("/send", (req, res) => {
-  const message = req.body.message;
+  if (!message) {
+    return res.status(400).json({ error: "Message is required" });
+  }
 
-  const mailOptions = {
-    from: "maxajima@gmail.com",
-    to: "maxajima@gmail.com",
-    subject: "New Website Message",
-    text: message,
-  };
-
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      return res.send("Error sending message.");
-    }
-    res.send("Message sent successfully!");
+  // mail transporter
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: process.env.EMAIL_USER, // your gmail
+      pass: process.env.EMAIL_PASS, // your app password
+    },
   });
-});
 
-app.listen(3000, () => console.log("Server running on port 3000"));
+  try {
+    await transporter.sendMail({
+      from: "maxajima@gmail.com",
+      to: process.env.EMAIL_USER,
+      subject: "New Website Message",
+      text: message,
+    });
+
+    return res.status(200).json({ success: true, msg: "Message sent!" });
+  } catch (err) {
+    console.error("MAIL ERROR:", err);
+    return res.status(500).json({ error: "Failed to send email" });
+  }
+}
