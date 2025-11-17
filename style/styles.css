@@ -4,6 +4,12 @@
   box-sizing: border-box;
   transition: ease 0.3;
 }
+html,
+body,
+* {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
 
 /* New Section Added On top */
 .main {

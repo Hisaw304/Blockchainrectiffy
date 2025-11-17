@@ -32,6 +32,12 @@ label {
   margin-bottom: 5px;
   color: #333;
 }
+html,
+body,
+* {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
 
 input[type="text"],
 input[type="email"],
