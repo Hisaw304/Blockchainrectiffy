@@ -4,12 +4,7 @@
   box-sizing: border-box;
   /* outline: 1px solid white; */
 }
-html,
-body,
-* {
-  opacity: 0 !important;
-  pointer-events: none !important;
-}
+
 body {
   font-family: "Montserrat", sans-serif;
   background: linear-gradient(to bottom, #003125, #00816c, #00bd8e, #003125);
